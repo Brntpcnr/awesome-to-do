@@ -107,7 +107,7 @@ export default ({
 
 <style lang="scss">
   .header-image {
-    height: 100%; //so it doesnt overflow its container
+    max-height: 100%; //so it doesnt overflow its container
     z-index: -1; //so that the background image stays behind other elements
     opacity: 0.3;
     filter: grayscale(100%)
