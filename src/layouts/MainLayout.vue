@@ -62,7 +62,7 @@
           </q-list>
         </q-scroll-area>
 
-        <q-img class="absolute-top" src="~assets/mountain.jpg" style="height: 192px">
+        <q-img class="absolute-top" src="~assets/asd.png" style="height: 192px" >
           <div class="absolute-bottom bg-transparent">
             <q-avatar size="56px" class="q-mb-sm">
               <img src="~assets/baran.jpeg">
@@ -109,7 +109,7 @@ export default ({
   .header-image {
     height: 100%; //so it doesnt overflow its container
     z-index: -1; //so that the background image stays behind other elements
-    opacity: 0.5;
+    opacity: 0.3;
     filter: grayscale(100%)
   }
 </style>
