@@ -28,7 +28,7 @@
         v-for="(task, index) in tasks"
         :key="task.title"
         @click="task.done = !task.done"
-        :class="{'done bg-blue-1' : task.done}"
+        :class="{'done bg-blue-4' : task.done}"
         clickable
         v-ripple>
         <q-item-section avatar>
