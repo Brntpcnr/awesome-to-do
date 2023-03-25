@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header>
       <q-toolbar>
         <q-btn
           flat
@@ -11,20 +11,20 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
+      <div class="q-px-lg  q-mb-md">
+        <div class="text-h3">Todo</div>
+      </div>
     </q-header>
 
     <q-footer>
       <q-tabs>
         <q-route-tab
+
         to="/"
         icon="list"
         label="Todo" />
+
         <q-route-tab
         to="/settings"
         icon="settings"
@@ -34,24 +34,45 @@
     </q-footer>
 
     <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Navigation
-        </q-item-label>
+        v-model="leftDrawerOpen"
+        show-if-above
+        :width="160"
+        :breakpoint="600"
+      >
 
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
+          <q-list padding>
+            <q-item
+              to="/"
+              exact
+              clickable
+              v-ripple>
+              <q-item-section avatar>
+                <q-icon name="list" />
+              </q-item-section>
+
+              <q-item-section>
+                Todo
+              </q-item-section>
+            </q-item>
+
+            <q-item
+              to="/settings"
+              exact
+              clickable
+              v-ripple>
+              <q-item-section avatar>
+                <q-icon name="settings" />
+              </q-item-section>
+
+              <q-item-section>
+                Settings
+              </q-item-section>
+            </q-item>
+
+          </q-list>
+
+
+      </q-drawer>
 
     <q-page-container>
       <router-view />
@@ -68,10 +89,10 @@ const linksList = [
 
     title: 'Todo',
     icon: 'list',
-    link: '/'
+    link: '/',
+
   },
   {
-    
     title: 'Settings',
     icon: 'settings',
     link: '/#/settings'
